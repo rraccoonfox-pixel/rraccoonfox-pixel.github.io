@@ -5,66 +5,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Little Heartbreak | Elizabet Gubert</title>
+
+    <!-- Bootstrap: навигация, сетка и адаптивное видео. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Общий CSS: фон, шрифты, размер заголовков и отступы. -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 40px; background-color: #F5EEE8;">
+<body class="project-page">
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+    <!-- Общий фон портфолио. -->
+    <div class="background-art" aria-hidden="true"></div>
 
-        <h1>A Little Heartbreak, 2025</h1>
-    </header>
+    <div class="container-fluid page-shell project-shell">
 
-    <main>
+        <header>
 
-        <iframe
-            width="800"
-            height="450"
-            src="https://www.youtube.com/embed/u_bUdDg8G54"
-            title="A Little Heartbreak by Elizabet Gubert"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+            <!-- Одинаковое меню на всех страницах работ. -->
+            <nav class="navbar navbar-expand" aria-label="Main navigation">
 
-        <h2>Details</h2>
+                <a class="navbar-brand" href="index.html">eg.</a>
 
-        <p>2D Animation</p>
-        <p>Procreate Dreams</p>
-        <p>Resolution: 3840 × 2160 px</p>
-        <p>Duration: 0:39</p>
+                <!-- Bootstrap ms-auto: перемещает меню вправо. -->
+                <ul class="navbar-nav ms-auto">
 
-        <h2>About the Work</h2>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-        <p>
-            In this animation, a flour sack notices someone he
-            finds beautiful and tries to get her attention.
-            What begins as a hopeful attempt to impress her
-            ends in disappointment when he discovers that
-            she is a cardboard cutout.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
 
-        <p>
-            The class assignment was to animate a flour sack
-            performing an action. I developed this story and
-            animated it in Procreate Dreams, practicing how
-            to express personality and emotion through movement.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
 
-        <p>
-            With such a simple character, the timing and gestures
-            had to communicate his feelings. I wanted the ending
-            to feel funny but also a little sad, turning a moment
-            of excitement into a little heartbreak.
-        </p>
+                </ul>
 
-        <p><a href="index.html">Back to Projects</a></p>
+            </nav>
 
-    </main>
+            <!-- Тот же уменьшенный размер заголовка из style.css. -->
+            <div class="project-heading">
+                <h1>A Little Heartbreak, 2025</h1>
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="project-gallery" aria-label="Project video">
+
+                <figure>
+
+                    <!-- Bootstrap ratio-16x9: видео сохраняет пропорции
+                         и подстраивается под ширину экрана. -->
+                    <div class="ratio ratio-16x9">
+
+                        <iframe
+                            class="border-0"
+                            src="https://www.youtube.com/embed/u_bUdDg8G54"
+                            title="A Little Heartbreak by Elizabet Gubert"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </figure>
+
+            </section>
+
+            <!-- Bootstrap: две колонки на большом экране.
+                 На телефоне блоки располагаются друг под другом. -->
+            <div class="row g-5 project-information">
+
+                <section class="col-12 col-lg-4">
+
+                    <h2>Details</h2>
+
+                    <p class="project-techniques">
+                        2D Animation
+                    </p>
+
+                    <!-- Короткая линия перед названием программы. -->
+                    <hr class="project-divider">
+
+                    <p class="project-software">
+                        Procreate Dreams
+                    </p>
+
+                    <!-- Bootstrap mt-4: отступ сверху перед характеристиками. -->
+                    <p class="project-software mt-4">
+                        Resolution: 3840 × 2160 px<br>
+                        Duration: 0:39
+                    </p>
+
+                </section>
+
+                <section class="col-12 col-lg-8 project-description">
+
+                    <h2>About the Work</h2>
+
+                    <p>
+                        In this animation, a flour sack notices someone he
+                        finds beautiful and tries to get her attention.
+                        What begins as a hopeful attempt to impress her
+                        ends in disappointment when he discovers that
+                        she is a cardboard cutout.
+                    </p>
+
+                    <p>
+                        The class assignment was to animate a flour sack
+                        performing an action. I developed this story and
+                        animated it in Procreate Dreams, practicing how
+                        to express personality and emotion through movement.
+                    </p>
+
+                    <p>
+                        With such a simple character, the timing and gestures
+                        had to communicate his feelings. I wanted the ending
+                        to feel funny but also a little sad, turning a moment
+                        of excitement into a little heartbreak.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Только ссылка назад, без повторения имени. -->
+        <footer class="project-footer">
+            <a href="index.html">Back to Projects</a>
+        </footer>
+
+    </div>
 
 </body>
 </html>

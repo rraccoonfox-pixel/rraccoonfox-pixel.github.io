@@ -5,70 +5,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How Fast Can You Read? | Elizabet Gubert</title>
+
+    <!-- Bootstrap: навигация, сетка и адаптивное видео. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Общий CSS: фон, шрифты, уменьшенные заголовки и отступы. -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 40px; background-color: #F5EEE8;">
+<body class="project-page">
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+    <!-- Общий фон портфолио. -->
+    <div class="background-art" aria-hidden="true"></div>
 
-        <h1>How Fast Can You Read?
-<br>		2026</h1>
-    </header>
+    <div class="container-fluid page-shell project-shell">
 
-    <main>
+        <header>
 
-        <iframe
-            width="800"
-            height="450"
-            src="https://www.youtube.com/embed/wsWCIhLXqbM"
-            title="How Fast Can You Read? by Elizabet Gubert"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+            <!-- Одинаковое меню на всех страницах работ. -->
+            <nav class="navbar navbar-expand" aria-label="Main navigation">
 
-        <h2>Details</h2>
+                <a class="navbar-brand" href="index.html">eg.</a>
 
-        <p>Motion Graphics | Reading Challenge</p>
-        <p>Adobe After Effects</p>
-        <p>Resolution: 1920 × 1080 px</p>
-        <p>Duration: 2:01</p>
+                <!-- Bootstrap ms-auto: перемещает меню вправо. -->
+                <ul class="navbar-nav ms-auto">
 
-        <h2>About the Work</h2>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-        <p>
-            This video challenges viewers to keep reading as the
-            words gradually speed up. The text presents interesting
-            facts, while animated images, GIFs, and memes compete
-            for the viewer's attention.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
 
-        <p>
-            I created the video in After Effects, using images
-            found through Google Images and synchronizing the
-            animations with the music. The visuals make the
-            challenge entertaining, while also becoming distractions
-            that make it harder to read everything.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
 
-        <p>
-            Viewers may experience the video differently on a
-            second watch. The first time, they might focus on
-            the animations or try to keep up with the words.
-            Watching again gives them a chance to catch missed
-            facts and notice more visual details. This is one
-            of my favorite projects because it combines information,
-            humor, music, and participation.
-        </p>
+                </ul>
 
-        <p><a href="index.html">Back to Projects</a></p>
+            </nav>
 
-    </main>
+            <!-- Размер и шрифт берутся из общего CSS страниц работ. -->
+            <div class="project-heading">
+                <h1>How Fast Can You Read?, 2026</h1>
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="project-gallery" aria-label="Project video">
+
+                <figure>
+
+                    <!-- Bootstrap ratio-16x9: сохраняет пропорции видео
+                         при изменении ширины экрана. -->
+                    <div class="ratio ratio-16x9">
+
+                        <iframe
+                            class="border-0"
+                            src="https://www.youtube.com/embed/wsWCIhLXqbM"
+                            title="How Fast Can You Read? by Elizabet Gubert"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </figure>
+
+            </section>
+
+            <!-- Bootstrap: Details слева, описание справа.
+                 На телефоне блоки располагаются друг под другом. -->
+            <div class="row g-5 project-information">
+
+                <section class="col-12 col-lg-4">
+
+                    <h2>Details</h2>
+
+                    <p class="project-techniques">
+                        Motion Graphics | Reading Challenge
+                    </p>
+
+                    <!-- Короткая линия отделяет программы от техник. -->
+                    <hr class="project-divider">
+
+                    <p class="project-software">
+                        Adobe After Effects
+                    </p>
+
+                    <!-- Bootstrap mt-4: дополнительный отступ сверху. -->
+                    <p class="project-software mt-4">
+                        Resolution: 1920 × 1080 px<br>
+                        Duration: 2:01
+                    </p>
+
+                </section>
+
+                <section class="col-12 col-lg-8 project-description">
+
+                    <h2>About the Work</h2>
+
+                    <p>
+                        This video challenges viewers to keep reading as the
+                        words gradually speed up. The text presents interesting
+                        facts, while animated images, GIFs, and memes compete
+                        for the viewer's attention.
+                    </p>
+
+                    <p>
+                        I created the video in After Effects, using images
+                        found through Google Images and synchronizing the
+                        animations with the music. The visuals make the
+                        challenge entertaining, while also becoming distractions
+                        that make it harder to read everything.
+                    </p>
+
+                    <p>
+                        Viewers may experience the video differently on a
+                        second watch. The first time, they might focus on
+                        the animations or try to keep up with the words.
+                        Watching again gives them a chance to catch missed
+                        facts and notice more visual details. This is one
+                        of my favorite projects because it combines information,
+                        humor, music, and participation.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <!-- Ссылка назад, без повторения имени. -->
+        <footer class="project-footer">
+            <a href="index.html">Back to Projects</a>
+        </footer>
+
+    </div>
 
 </body>
 </html>

@@ -5,95 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jalgyz | Elizabet Gubert</title>
+
+    <!-- Bootstrap: навигация, сетка и адаптивное видео. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Общий CSS: тот же фон, размер заголовков и отступы. -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 40px; background-color: #F5EEE8;">
+<body class="project-page">
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+    <!-- Общий фон портфолио. -->
+    <div class="background-art" aria-hidden="true"></div>
 
-        <h1>Jalgyz, 2026</h1>
-    </header>
+    <div class="container-fluid page-shell project-shell">
 
-    <main>
+        <header>
 
-        <iframe
-            width="800"
-            height="450"
-            src="https://www.youtube.com/embed/0d8g-jNe4Ls"
-            title="Jalgyz by Elizabet Gubert"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
+            <!-- Общая навигация, как на остальных страницах работ. -->
+            <nav class="navbar navbar-expand" aria-label="Main navigation">
 
-        <h2>Details</h2>
+                <a class="navbar-brand" href="index.html">eg.</a>
 
-        <p>Video Mashup / Glitch</p>
-        <p>Adobe Premiere Pro | Audacity | FFmpeg | Google Colab</p>
-        <p>Resolution: 1920 × 1080 px</p>
-        <p>Duration: 2:12</p>
+                <!-- Bootstrap ms-auto: меню справа. -->
+                <ul class="navbar-nav ms-auto">
 
-        <h2>About the Work</h2>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-        <p>
-            <em>Jalgyz</em> is a Kazakh word meaning “alone.”
-            It is a two-minute video mashup created from two
-            appropriated YouTube videos and two pictures connected
-            to Kazakh culture. One video follows a man who is being
-            pursued by horsemen, while a wolf appears as a reflection
-            of his isolation and struggle to survive. The second
-            video shows a large ensemble performing Kazakh music
-            on the dombra, a traditional two-stringed instrument.
-            I also included fragmented images of horse riders in
-            an open landscape and the wooden structure at the top
-            of a traditional Kazakh yurt, called a shanyraq.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
 
-        <p>
-            I wanted to create something connected to my culture.
-            I downloaded the two source videos through Google Colab.
-            I also used Colab to divide the two pictures into frames
-            and turn those frames into short videos. In Adobe
-            Premiere Pro, I cut the original videos into short
-            sections, rearranged them, and placed the picture
-            sequences between changes in movement and music.
-            My goal was to hide the original narratives and create
-            a new sequence instead of retelling the stories of the
-            source videos. Then I converted the completed mashup
-            into raw data with FFmpeg and manipulated selected
-            sections in Audacity using Bass Boost, Echo, Reverb,
-            Phaser, and Reverse. I used these effects only on short
-            sections so that the original imagery would remain
-            visible. Finally, I converted the file back into a video,
-            returned it to Premiere, and restored the original music.
-        </p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
 
-        <p>
-            The new sequence creates a contrast between individual
-            survival and collective cultural identity. The man and
-            the wolf are both separated from their groups, pursued,
-            and forced to survive alone. In contrast, the dombra
-            ensemble represents community, shared rhythm, and
-            cultural continuity. The images of the shanyraq, horses,
-            and landscape appear like brief pieces of cultural
-            memory. Instead of receiving one clear story, viewers
-            must connect the fragments and create their own
-            interpretation. The glitch does not erase these cultural
-            symbols; it tests how much they can change and still
-            remain recognizable. Their survival within the broken
-            sequence becomes a reflection of cultural endurance.
-        </p>
+                </ul>
 
-        <p>
+            </nav>
+
+            <!-- Размер заголовка берётся из общего style.css. -->
+            <div class="project-heading">
+                <h1>Jalgyz, 2026</h1>
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="project-gallery" aria-label="Project video">
+
+                <figure>
+
+                    <!-- Bootstrap ratio-16x9: сохраняет пропорции видео. -->
+                    <div class="ratio ratio-16x9">
+
+                        <iframe
+                            class="border-0"
+                            src="https://www.youtube.com/embed/0d8g-jNe4Ls"
+                            title="Jalgyz by Elizabet Gubert"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </figure>
+
+            </section>
+
+            <!-- Bootstrap: Details слева, описание справа.
+                 На телефоне блоки располагаются друг под другом. -->
+            <div class="row g-5 project-information">
+
+                <section class="col-12 col-lg-4">
+
+                    <h2>Details</h2>
+
+                    <p class="project-techniques">
+                        Video Mashup / Glitch
+                    </p>
+
+                    <!-- Короткая линия отделяет программы от вида работы. -->
+                    <hr class="project-divider">
+
+                    <p class="project-software">
+                        Adobe Premiere Pro | Audacity | FFmpeg | Google Colab
+                    </p>
+
+                    <!-- Bootstrap mt-4: отступ сверху. -->
+                    <p class="project-software mt-4">
+                        Resolution: 1920 × 1080 px<br>
+                        Duration: 2:12
+                    </p>
+
+                </section>
+
+                <section class="col-12 col-lg-8 project-description">
+
+                    <h2>About the Work</h2>
+
+                    <p>
+                        <em>Jalgyz</em> is a Kazakh word meaning “alone.”
+                        It is a two-minute video mashup created from two
+                        appropriated YouTube videos and two pictures connected
+                        to Kazakh culture. One video follows a man who is being
+                        pursued by horsemen, while a wolf appears as a reflection
+                        of his isolation and struggle to survive. The second
+                        video shows a large ensemble performing Kazakh music
+                        on the dombra, a traditional two-stringed instrument.
+                        I also included fragmented images of horse riders in
+                        an open landscape and the wooden structure at the top
+                        of a traditional Kazakh yurt, called a shanyraq.
+                    </p>
+
+                    <p>
+                        I wanted to create something connected to my culture.
+                        I downloaded the two source videos through Google Colab.
+                        I also used Colab to divide the two pictures into frames
+                        and turn those frames into short videos. In Adobe
+                        Premiere Pro, I cut the original videos into short
+                        sections, rearranged them, and placed the picture
+                        sequences between changes in movement and music.
+                        My goal was to hide the original narratives and create
+                        a new sequence instead of retelling the stories of the
+                        source videos. Then I converted the completed mashup
+                        into raw data with FFmpeg and manipulated selected
+                        sections in Audacity using Bass Boost, Echo, Reverb,
+                        Phaser, and Reverse. I used these effects only on short
+                        sections so that the original imagery would remain
+                        visible. Finally, I converted the file back into a video,
+                        returned it to Premiere, and restored the original music.
+                    </p>
+
+                    <p>
+                        The new sequence creates a contrast between individual
+                        survival and collective cultural identity. The man and
+                        the wolf are both separated from their groups, pursued,
+                        and forced to survive alone. In contrast, the dombra
+                        ensemble represents community, shared rhythm, and
+                        cultural continuity. The images of the shanyraq, horses,
+                        and landscape appear like brief pieces of cultural
+                        memory. Instead of receiving one clear story, viewers
+                        must connect the fragments and create their own
+                        interpretation. The glitch does not erase these cultural
+                        symbols; it tests how much they can change and still
+                        remain recognizable. Their survival within the broken
+                        sequence becomes a reflection of cultural endurance.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </main>
+
+        <footer class="project-footer">
             <a href="index.html">Back to Projects</a>
-        </p>
+        </footer>
 
-    </main>
+    </div>
 
 </body>
 </html>

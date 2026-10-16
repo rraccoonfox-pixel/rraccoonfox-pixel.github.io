@@ -3,73 +3,207 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>About | Elizabet Gubert</title>
+
+    <!-- BOOTSTRAP 5:
+         готовые классы для меню, колонок, отступов и выравнивания. -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Подключаем тот же style.css, который использует главная.
+         Второй CSS-файл создавать не нужно. -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="margin: 40px; background-color: #F5EEE8;">
+<!-- about-page — отдельный класс этой страницы.
+     Позволяет менять About, не затрагивая главную. -->
+<body class="about-page">
 
-    <header>
-        <h1>About</h1>
+    <a class="skip-link" href="#about-content">
+        Skip to about content
+    </a>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+    <!-- Тот же размытый движущийся фон, что и на главной.
+         Его оформление уже находится в style.css. -->
+    <div class="background-art" aria-hidden="true"></div>
+
+    <!-- BOOTSTRAP: container-fluid — общий контейнер.
+         page-shell — наш класс для боковых полей. -->
+    <div class="container-fluid page-shell">
+
+        <!-- BOOTSTRAP: горизонтальное меню.
+             Добавили Contact и отметили About как текущую страницу. -->
+        <nav class="navbar navbar-expand" aria-label="Main navigation">
+
+            <a class="navbar-brand"
+               href="index.html"
+               aria-label="Elizabet Gubert — Home">
+                eg.
+            </a>
+
+            <!-- ms-auto — автоматически отодвигает меню вправо. -->
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="about.html"
+                       aria-current="page">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
             </ul>
         </nav>
-    </header>
 
-    <main>
+        <!-- BOOTSTRAP:
+             text-center — текст по центру;
+             py-5 — внутренние отступы сверху и снизу.
+             about-heading — наш класс для оформления заголовка. -->
+        <header class="about-heading text-center py-5">
+            <h1>About</h1>
+        </header>
 
-        <h2>Elizabet Gubert</h2>
+        <!-- BOOTSTRAP:
+             row — строка сетки;
+             justify-content-center — центрируем колонки внутри строки. -->
+        <div class="row justify-content-center">
 
-        <p>
-           An artist from Kazakhstan, currently studying
-            Digital Media Art at San José State University in California.
-        </p>
-		<img src="elizabet.JPG"
-             alt="Portrait of Elizabet Gubert"
-             width="300">
+            <!-- BOOTSTRAP:
+                 col-12 — вся ширина на маленьком экране;
+                 col-md-10 — 10 из 12 частей на среднем;
+                 col-lg-8 — 8 из 12 частей на большом;
+                 col-xl-6 — 6 из 12 частей на очень большом.
 
-        <h2>Artist Statement</h2>
+                 Так текст находится по центру страницы,
+                 но не растягивается на всю её ширину. -->
+            <main id="about-content"
+                  class="col-12 col-md-10 col-lg-8 col-xl-6 about-content">
 
-        <p>
-            My art brings together my culture, personal experiences, 
-			and curiosity about technology. My heritage shapes how I 
-			see the world, and I want to share it through my work. 
-			Memories, migration, language, and identity influence the stories I tell. 
-			I also want to speak honestly about problems within my culture, 
-			because loving my heritage means caring about what needs to change.
-        </p>
+                <!-- Центрируем имя, короткую биографию и фотографию. -->
+                <section class="text-center mb-5"
+                         aria-labelledby="artist-name">
 
-        <p>
-            At the same time, not every project begins with identity or a personal story.
-			Sometimes I start with an unexpected idea, a new technique, or a question:
-			“What happens if I try this?” Experimenting helps me discover new interests
-			and ways to express myself.
-        </p>
+                    <!-- mb-3 — внешний отступ снизу.
+                         Цифра 3 — уровень отступа Bootstrap, не 3px. -->
+                    <h2 id="artist-name" class="mb-3">
+                        Elizabet Gubert
+                    </h2>
 
-        <p>
-            I work with video, digital images, 3D modeling, and sometimes sculpture. 
-			I am drawn to technical art because I enjoy both imagining something and figuring 
-			out how to make it work. I want to explore how physical materials, 
-			virtual environments, and interactive experiences can come together.
-        </p>
+                    <p class="about-intro mb-4">
+                        An artist from Kazakhstan, currently studying
+                        Digital Media Art at San José State University
+                        in California.
+                    </p>
 
-        <p>
-            I want my work to entertain people, make them curious, 
-			and give them something to think about. I like leaving room for viewers
-			to form their own interpretations. I am still developing my visual language,
-			and what keeps me moving forward is the chance to learn, take risks,
-			and surprise myself.
-        </p>
+                    <!-- Фотография сохранена: elizabet.JPG.
 
-    </main>
+                         BOOTSTRAP:
+                         img-fluid — картинка помещается в доступную ширину;
+                         d-block — отображается как блок;
+                         mx-auto — автоматические поля слева и справа,
+                         благодаря которым фото находится по центру.
 
-    <footer>
-        <p><a href="index.html">Back to Projects</a></p>
-    </footer>
+                         about-photo — наш класс для будущих настроек фото. -->
+                    <img
+                        class="img-fluid d-block mx-auto about-photo"
+                        src="elizabet.JPG"
+                        alt="Portrait of Elizabet Gubert"
+                        width="300">
+
+                </section>
+
+                <!-- Заголовок statement — по центру,
+                     длинные абзацы — выровнены влево. -->
+                <section class="artist-statement text-start"
+                         aria-labelledby="statement-title">
+
+                    <h2 id="statement-title"
+                        class="text-center mb-4">
+                        Artist Statement
+                    </h2>
+
+                    <p>
+                        My art brings together my culture, personal experiences,
+                        and curiosity about technology. My heritage shapes how I
+                        see the world, and I want to share it through my work.
+                        Memories, migration, language, and identity influence
+                        the stories I tell. I also want to speak honestly about
+                        problems within my culture, because loving my heritage
+                        means caring about what needs to change.
+                    </p>
+
+                    <p>
+                        At the same time, not every project begins with identity
+                        or a personal story. Sometimes I start with an unexpected
+                        idea, a new technique, or a question:
+                        “What happens if I try this?” Experimenting helps me
+                        discover new interests and ways to express myself.
+                    </p>
+
+                    <p>
+                        I work with video, digital images, 3D modeling, and
+                        sometimes sculpture. I am drawn to technical art because
+                        I enjoy both imagining something and figuring out how
+                        to make it work. I want to explore how physical
+                        materials, virtual environments, and interactive
+                        experiences can come together.
+                    </p>
+
+                    <p>
+                        I want my work to entertain people, make them curious,
+                        and give them something to think about. I like leaving
+                        room for viewers to form their own interpretations.
+                        I am still developing my visual language, and what
+                        keeps me moving forward is the chance to learn,
+                        take risks, and surprise myself.
+                    </p>
+
+                </section>
+
+                <!-- BOOTSTRAP:
+                     text-center — центрируем ссылку;
+                     my-5 — внешние отступы сверху и снизу. -->
+                <p class="text-center my-5">
+                    <a class="back-link" href="index.html#works">
+                        ← Back to Projects
+                    </a>
+                </p>
+
+            </main>
+        </div>
+
+        <!-- Такой же footer, как на главной.
+             Bootstrap располагает элементы в колонку на телефоне
+             и в строку на более широком экране. -->
+        <footer class="site-footer d-flex flex-column flex-md-row
+                       justify-content-between align-items-md-center">
+
+        
+
+            <small>Digital media · Selected works</small>
+
+            <a href="contact.html">Let's connect ↗</a>
+
+        </footer>
+
+    </div>
 
 </body>
 </html>
