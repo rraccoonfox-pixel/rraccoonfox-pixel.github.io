@@ -915,7 +915,7 @@ a:focus-visible {
 
 /* Селекторы начинаются с .contact-page — другие страницы не меняются. */
 .contact-page .navbar {
-    border-bottom: 1px solid #f5eee833; /* Тонкая полупрозрачная линия. */
+   border-bottom: none; /* Убираем линию под меню на странице Contact. */
     padding: 24px 0; /* Внутренний отступ: сверху/снизу 24px, по бокам 0. */
 }
 
