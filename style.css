@@ -967,7 +967,7 @@ a:focus-visible {
 
 .contact-email {
     font-family: Georgia, serif;
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: clamp(18px, 2.4vw, 32px); /* Уменьшаем размер email примерно на 20%. */
     color: inherit; /* inherit — унаследовать цвет окружающего текста. */
     text-underline-offset: 8px; /* Отодвигаем подчёркивание от букв. */
     text-decoration-thickness: 1px; /* Тонкое подчёркивание. */
@@ -1124,4 +1124,7 @@ body.project-page {
 .home .section-heading > span {
     color: #FFFFFF !important;
     /* !important — даём этому цвету приоритет над обычными правилами. */
+}/* Убираем только нижнюю линию меню на всех страницах. */
+body .navbar {
+    border-bottom: none;
 }
