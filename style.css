@@ -1118,10 +1118,10 @@ body.project-page {
     border-color: #ad8cb5;
     color: #f5eee8;
     box-shadow: 0 6px 18px #0004; /* Мягкая тень. */
-}/* Подгоняем блок с фотографией под её ширину. */
-.project-page .project-gallery figure:has(> img) {
-    width: fit-content; /* Ширина блока соответствует картинке. */
-    max-width: 100%; /* Блок не выходит за пределы экрана. */
-    margin-left: auto; /* Вместе с margin-right центрирует весь блок. */
-    margin-right: auto;
+}/* Белый цвет надписи PORTFOLIO и номеров работ на главной. */
+.home .eyebrow,
+.home .work-number,
+.home .section-heading > span {
+    color: #FFFFFF !important;
+    /* !important — даём этому цвету приоритет над обычными правилами. */
 }
