@@ -8,52 +8,33 @@ let colorPicker;
 // Здесь будет храниться загруженная PNG.
 let brushImage;
 
-// Кисть 1 запоминает маршрут мыши.
-//
-// points — список точек этого маршрута.
-// Сначала точек нет, поэтому стоят пустые скобки [].
-//
-// Когда рисуешь, программа добавляет сюда координаты.
+// Кисть 1 запоминает маршрут мыши, а points это список точек этого маршрута.
+// Сначала точек нет, поэтому стоят пустые скобки []. Когда рисую, программа добавляет сюда координаты.
 // Затем соединяет их линией с тонкими концами.
 let points = [];
+let savedPixels; // Здесь сохраняем рисунок перед новым штрихом кисти 1.
+let drawingTapered = false; // false — штрих не начат. true — штрих начат, можно его продолжать.
 
-// Здесь сохраняем рисунок перед новым штрихом кисти 1.
-let savedPixels;
-
-// false — штрих не начат.
-// true — штрих начат, можно его продолжать.
-let drawingTapered = false;
-
-
-// ЗАГРУЗКА КАРТИНКИ
-
-function preload() {
-  // Загружаем файл и запоминаем картинку в brushImage.
-  brushImage = loadImage('brushpainttext.png');
+function preload() {   // ЗАГРУЗКА КАРТИНКИ 
+  brushImage = loadImage('brushpainttext.png');   // Загружаем файл и запоминаем картинку в brushImage.
 }
 
-
 // ПОДГОТОВКА СТРАНИЦЫ
+function setup() {   // setup() выполняется один раз при запуске.
 
-// setup() выполняется один раз при запуске.
-function setup() {
-
-  // Создаём палитру с начальным почти чёрным цветом.
-  colorPicker = createColorPicker('#222222');
+  colorPicker = createColorPicker('#222222'); // Создаём палитру с начальным почти чёрным цветом.
 
   // position(x, y) задаёт место на странице:
   // 450 пикселей от левого края, 10 — от верхнего.
   colorPicker.position(450, 10);
 
-  // Создаём инструкцию над холстом.
-  let instructions = createP(
+
+  let instructions = createP(                   // Создаём инструкцию над холстом. createP это создаем параграф
     'Choose your brush: press 1–0.'
     );
+ 
   instructions.position(10, 0);
-
-  // Создаём холст шириной 600 и высотой 600.
-  let drawingCanvas = createCanvas(600, 600);
-
+  let drawingCanvas = createCanvas(600, 600);   // Создаём холст шириной 600 и высотой 600.
   // Ставим холст ниже инструкции.
   drawingCanvas.position(10, 50);
 
